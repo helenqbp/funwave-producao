@@ -1,0 +1,6 @@
+const CACHE='funwave-pwa-v1';
+const CORE=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
+const PDF_ASSETS=['https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js','https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js','https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js'];
+self.addEventListener('install',event=>{event.waitUntil((async()=>{const c=await caches.open(CACHE);await c.addAll(CORE);await Promise.all(PDF_ASSETS.map(async url=>{try{await c.add(new Request(url,{mode:'no-cors'}));}catch(e){}}));await self.skipWaiting();})());});
+self.addEventListener('activate',event=>{event.waitUntil((async()=>{await Promise.all((await caches.keys()).filter(k=>k.startsWith('funwave-pwa-')&&k!==CACHE).map(k=>caches.delete(k)));await self.clients.claim();})());});
+self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;event.respondWith((async()=>{const cached=await caches.match(event.request);if(cached)return cached;const response=await fetch(event.request);if(response.ok||response.type==='opaque'){const cache=await caches.open(CACHE);cache.put(event.request,response.clone()).catch(()=>{});}return response;})());});
