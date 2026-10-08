@@ -1,0 +1,8 @@
+THE FUN WAVE - PWA
+
+1. Extraia todos os arquivos deste ZIP.
+2. Publique os arquivos juntos na raiz de um site HTTPS (por exemplo GitHub Pages).
+3. Abra a URL publicada no Chrome do Android e use Instalar app / Adicionar à tela inicial.
+4. Abra online ao menos uma vez para carregar as bibliotecas de PDF. O funcionamento offline dos PDFs depende de terem sido armazenadas pelo navegador.
+5. Dados antigos do HTML aberto via Downloads nao migram automaticamente: exporte backup na versao antiga e importe no novo endereco, se a funcao estiver disponivel.
+6. Evite publicar dados reais de pedidos, CSVs ou PDFs. Somente os arquivos do programa devem ir ao site.

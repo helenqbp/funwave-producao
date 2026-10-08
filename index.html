@@ -1,0 +1,240 @@
+<!doctype html><html lang="pt-BR"><head><link rel="manifest" href="./manifest.webmanifest"><meta name="theme-color" content="#6743af"><meta name="apple-mobile-web-app-capable" content="yes"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Fun Wave • Central de Produção e Etiquetas</title><style>:root{font-family:system-ui,-apple-system,Arial;color:#232338;background:#f5f3fb}*{box-sizing:border-box}body{margin:0}.wrap{max-width:620px;margin:auto;padding:18px 15px 50px}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}h1{font-size:24px;margin:3px 0}h2{font-size:17px;margin:0 0 12px}.muted{color:#747287;font-size:13px}.brand{font-size:11px;font-weight:800;letter-spacing:2px;color:#7950bb}.card{background:white;border-radius:18px;padding:18px;margin:12px 0;box-shadow:0 3px 15px #26124a0b}.primary{background:#6542b1;color:white;border:0;border-radius:12px;padding:15px;font-weight:700;font-size:15px;width:100%;cursor:pointer}.secondary{background:#eee8fb;color:#51348e;border:0;border-radius:10px;padding:11px;font-weight:700;cursor:pointer}.outline{background:white;color:#51348e;border:1px solid #cbbce8;border-radius:10px;padding:11px;font-weight:700;cursor:pointer}.row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #eeeaf4}.row:last-child{border:0}.count{font-size:25px;font-weight:800}.hero{font-size:46px;font-weight:800;line-height:1.1;color:#58339f}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat{background:#f5f2fb;padding:12px 8px;border-radius:12px;text-align:center}.stat b{display:block;font-size:25px}.stat span{font-size:11px;color:#666079}.hint{font-size:12px;color:#746e84;line-height:1.5}.success{color:#18774d}.warn{color:#b35a16}.error{color:#a3223c}input[type=file]{display:none}.filelabel{display:block;text-align:center}.actions{display:flex;gap:8px;flex-wrap:wrap}.actions button{flex:1}details{margin-top:12px}summary{cursor:pointer;color:#5d3d9b;font-weight:600}#message{white-space:pre-wrap}small{font-size:12px}.pill{font-size:11px;border-radius:20px;background:#f0ecf7;padding:5px 8px}.empty{text-align:center;color:#77718a;padding:18px 0}button:disabled{opacity:.5}.packcard{padding:12px 0;border-bottom:1px solid #eeeaf4}.packcard:last-child{border:0}.packgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:end}.packgrid label{font-size:12px;color:#716982;display:flex;flex-direction:column;gap:5px}.packgrid label b{font-size:22px;color:#292337}.packgrid input{width:100%;padding:11px;border:1px solid #cbbce8;border-radius:10px;font-size:18px;font-weight:700}.packgrid button{min-height:45px}
+.packcard{padding:16px 0;border-bottom:1px solid #e8e4ef}.packcard:last-child{border:0}.packtitle{font-size:18px;font-weight:800;margin-bottom:12px}.metrics{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;align-items:stretch}.metric{background:#f6f4fa;border-radius:12px;padding:10px 8px;min-width:0}.metric .metriclabel{display:block;font-size:11px;color:#706b7c;line-height:1.3;min-height:28px}.metric strong{display:block;font-size:26px;line-height:1.3;margin-top:5px}.metric.need{background:#eee7fa}.metric.need strong{color:#58339f}.metric input{display:block;width:100%;min-width:0;border:1px solid #c7b9e3;border-radius:8px;padding:4px 5px;margin-top:3px;font-size:23px;font-weight:800;background:white;color:#292337}.printline{display:flex;gap:9px;align-items:end;margin-top:11px}.printline label{flex:1;min-width:0;color:#716982;font-size:12px}.printline input{display:block;width:100%;padding:9px;border:1px solid #cbbce8;border-radius:10px;font-size:17px;font-weight:700;margin-top:4px}.printline button{flex:1;min-width:0;min-height:44px;font-size:13px;padding:9px 6px}.packcard .metric input:focus,.printline input:focus{outline:2px solid #9470d1;outline-offset:1px}@media(max-width:350px){.metric{padding:8px 5px}.metric strong{font-size:22px}.metric input{font-size:20px}.printline button{font-size:12px}}
+
+.label-module .file{display:block;border:1.5px dashed #bbb;border-radius:14px;padding:14px;margin:10px 0}
+.label-module .file b{display:block;margin-bottom:6px}
+.label-module input[type=file]{display:block;width:100%}
+.label-module button{width:100%;border:0;border-radius:12px;padding:15px;font-size:16px;font-weight:750;background:#6542b1;color:#fff;margin-top:10px}
+.label-module button:disabled{opacity:.45}
+.label-module .status{white-space:pre-wrap;font-size:14px;line-height:1.45;margin-top:12px}
+.label-module .ok{color:#16803a}.label-module .warn{color:#a15c00}
+.label-module .small{font-size:12px;color:#777}
+.label-module .pill{display:inline-block;padding:4px 8px;border-radius:99px;background:#eee;font-size:12px;font-weight:700}
+
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;position:sticky;top:0;z-index:5;background:#f5f3fb;padding:10px 0}
+.tabs button{padding:12px 3px;border:1px solid #d7c9ed;background:#fff;color:#553d85;border-radius:12px;font-weight:750;font-size:14px}
+.tabs button.active{background:#6542b1;color:white}
+.tabpanel[hidden]{display:none!important}.stockrow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid #eee}.stockrow input{width:95px;padding:10px;border-radius:9px;border:1px solid #b8a8d1;font-size:20px;font-weight:750;text-align:center}.stockrow small{display:block;color:#777}.minor{font-size:13px;color:#666}.historyrow{border-bottom:1px solid #eee;padding:10px 0;font-size:13px}.historyrow button{width:auto;padding:7px 11px;margin:5px 0;background:#eee;color:#333}.tabpanel .card{margin-top:12px}
+</style></head><body><div class="wrap"><header><div><div class="brand">THE FUN WAVE</div><h1>Minha produção</h1><div class="muted">Contagem dos pedidos do TikTok Shop</div></div><div style="font-size:32px">📦</div></header><nav class="tabs" aria-label="Seções"><button type="button" data-tab="dashboard" class="active">Dashboard</button><button type="button" data-tab="estoque">Estoque</button><button type="button" data-tab="etiquetas">Etiquetas</button></nav><div id="tab-dashboard" class="tabpanel"><section class="card"><label class="primary filelabel" for="file">📂 Selecionar CSV de pedidos</label><input type="file" id="file" accept=".csv,text/csv,text/plain"><p id="message" class="hint">Escolha o CSV exportado pelo TikTok. O arquivo é processado somente neste aparelho, sem envio pela internet.</p><div class="muted" id="last"></div></section><section class="card"><div class="muted">TOTAL PENDENTE DE IMPRESSÃO</div><div class="hero" id="total">0</div><div class="muted" id="orders">Importe um arquivo para começar</div></section><section class="card"><h2>🖨️ O que preciso imprimir</h2><div id="products"><div class="empty">Nenhum pedido importado ainda.</div></div><p class="hint">Cadastre a quantidade de packs prontos na aba Estoque. A previsão desconta o que você já tem, e a baixa acontece quando as etiquetas são geradas.</p></section><section class="card"><h2>Resumo dos pedidos importados</h2><div class="stats"><div class="stat"><b id="noinvoice">0</b><span>Sem nota fiscal</span></div><div class="stat"><b id="pickup">0</b><span>Aguardando coleta</span></div><div class="stat"><b id="cancelled">0</b><span>Cancelados</span></div></div><p class="hint">Os indicadores contam pedidos únicos presentes no último arquivo. Para detectar cancelamentos, exporte um CSV que também inclua os pedidos cancelados.</p></section></div><div id="tab-estoque" class="tabpanel" hidden><section class="card"><h2>📦 Estoque de packs prontos</h2><p class="hint">Cadastre todos os packs, mesmo sem pedidos. A Dashboard desconta apenas na previsão; a baixa real acontece quando o PDF final é gerado com sucesso, uma vez por pedido.</p><div id="stocklist"></div><div style="display:flex;gap:8px;margin-top:12px"><input id="newPack" placeholder="Nome de outro pack" style="flex:1;min-width:0;padding:11px;border:1px solid #ccc;border-radius:10px"><button id="addPack" class="secondary" style="width:auto">Adicionar</button></div></section><section class="card"><h2>Histórico de etiquetas processadas</h2><div id="history"></div><button class="outline" id="backup">Exportar backup JSON</button><label class="filelabel" style="display:block;margin-top:12px">Restaurar backup <input id="restore" type="file" accept="application/json,.json"></label></section></div><div id="tab-etiquetas" class="tabpanel" hidden><section class="card label-module" id="etiquetas"><h2>🏷️ Gerar e imprimir etiquetas</h2><p class="hint">Selecione os dois PDFs do TikTok. O programa mantém o formato original 10 × 15 cm, com etiqueta de envio, DANFE e produto × quantidade.</p><label class="file"><b>1. Etiquetas + Packing List</b><input id="shipping" type="file" accept="application/pdf"></label><label class="file"><b>2. DANFE / NF-e</b><input id="danfe" type="file" accept="application/pdf"></label><button id="go">Gerar PDF final para impressão</button><div id="status" class="status" aria-live="polite"></div><p class="hint">Após gerar o PDF final, os pedidos identificados no CSV recebem baixa automática, apenas uma vez por rastreio. Reimprimir não desconta novamente. Confira os avisos de pedidos sem correspondência.</p></section></div><div id="tab-extra" class="tabpanel" hidden><section class="card"><details><summary>Ver pedidos e produtos identificados</summary><div id="details"></div></details><details><summary>Ajustar nomes dos packs</summary><p class="hint">Se algum produto aparecer com o nome errado, altere a palavra-chave abaixo e importe o CSV novamente.</p><div id="rules"></div><button class="outline" id="saveRules">Salvar nomes</button></details><details><summary>Limpar estoque e histórico desta versão</summary><p class="hint">Apaga os estoques e as baixas de etiquetas desta versão. Não altera nada no TikTok.</p><button class="outline" id="reset">Limpar estoque e histórico</button></details></section><p class="hint">O painel funciona localmente, mas a geração de PDFs precisa de conexão para carregar as bibliotecas. O CSV é uma fotografia dos pedidos no momento da exportação; o painel não consulta o TikTok sozinho. Para saber se chegaram novos pedidos, importe um CSV atualizado.</p></div><script>
+(()=>{'use strict';
+const K='funwave-central-v2',R='funwave-rules-v1';
+const defaultRules=[['Encantadas','princesas|fadas|sereias|encantadas'],['Dinossauros','dinossauro|dinossauros|t-rex'],['Animais','animais|animalzinhos|fazenda'],['Halloween','halloween|frankenstein|dracula|mumia'],['Six Seven','six seven|6 7|farmando aura'],['Atividades','atividades infantis|educativas']];
+const $=id=>document.getElementById(id);
+function load(k,d){try{return JSON.parse(localStorage.getItem(k))||d}catch{return d}}
+function save(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}}
+function norm(s){return String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim()}
+function esc(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function csvParse(t){t=t.replace(/^\uFEFF/,'');let out=[],r=[],v='',q=false;for(let i=0;i<t.length;i++){const c=t[i];if(q){if(c==='"'&&t[i+1]==='"'){v+='"';i++}else if(c==='"')q=false;else v+=c}else if(c==='"')q=true;else if(c===','){r.push(v);v=''}else if(c==='\n'||c==='\r'){if(c==='\r'&&t[i+1]==='\n')i++;r.push(v);if(r.some(x=>x.trim()))out.push(r);r=[];v=''}else v+=c}r.push(v);if(r.some(x=>x.trim()))out.push(r);return out}
+let rules=load(R,defaultRules),data=load(K,{stock:{},done:{},alloc:{},ledger:{}}),rows=[],hasFile=false;
+for(const key of ['stock','done','alloc','ledger'])if(!data[key])data[key]={};
+function label(name){let n=norm(name);for(const [title,terms] of rules)if(terms.split('|').some(t=>t.trim()&&n.includes(norm(t))))return title;return name||'Produto sem nome'}
+function idOf(r){return [r['Order ID'],r['SKU ID']||r['Product Name'],r['Variation']].map(x=>String(x||'').trim()).join('::')}
+function canceled(r){return /cancel|cancelad|devolv|refund|reembols/i.test([r['Order Status'],r['Order Substatus'],r['Cancelation/Return Type']].join(' '))}
+function qty(r){return Math.max(0,Number(String(r.Quantity||'0').replace(',','.'))||0)}
+function statusInvoice(r){let s=norm(r['Invoice Status']);return !s||(!/valid|emitid|enviad|sucess|success|approved|aprovad/.test(s))}
+function number(v){return Math.max(0,Math.floor(Number(v)||0))}
+function calc(){const groups={},orders=new Set(),noinv=new Set(),pick=new Set(),canc=new Set();for(const r of rows){const id=String(r['Order ID']||'').trim();if(!id)continue;orders.add(id);if(canceled(r)){canc.add(id);continue}if(statusInvoice(r))noinv.add(id);if(/aguardando coleta/i.test(r['Order Substatus']||''))pick.add(id);const n=label(r['Product Name']);if(!groups[n])groups[n]={name:n,raw:0,unfulfilled:0};const q=qty(r),already=Math.min(q,number(data.done[idOf(r)]));groups[n].raw+=q;groups[n].unfulfilled+=q-already}return {groups,orders,noinv,pick,canc}}
+function draw(){const {groups,orders,noinv,pick,canc}=calc();const names=[...new Set([...rules.map(x=>x[0]),...Object.keys(groups),...Object.keys(data.stock)])];let total=0;const cards=[];for(const n of names){const g=groups[n]||{raw:0,unfulfilled:0},stock=number(data.stock[n]),reserved=Math.min(stock,g.unfulfilled),need=Math.max(0,g.unfulfilled-stock);total+=need;if(!g.raw)continue;cards.push({n,g,stock,reserved,need})}cards.sort((a,b)=>b.g.unfulfilled-a.g.unfulfilled||a.n.localeCompare(b.n));$('total').textContent=total;$('orders').textContent=hasFile?`${orders.size} pedidos únicos no arquivo • ${rows.length} linhas de produto`:'Importe um arquivo para começar';$('noinvoice').textContent=noinv.size;$('pickup').textContent=pick.size;$('cancelled').textContent=canc.size;
+$('products').innerHTML=cards.length?cards.map(({n,g,stock,need})=>`<div class="packcard"><div class="packtitle">${esc(n)}</div><div class="metrics"><div class="metric"><span class="metriclabel">Pedidos<br>pendentes</span><strong>${g.unfulfilled}</strong></div><div class="metric"><span class="metriclabel">Em<br>estoque</span><strong>${stock}</strong></div><div class="metric need"><span class="metriclabel">Falta<br>imprimir</span><strong>${need}</strong></div></div></div>`).join(''):'<div class="empty">Nenhum pedido pendente neste arquivo.</div>';
+renderStock();
+$('details').innerHTML=rows.length?rows.map(r=>`<div class="row"><div><small>${esc(String(r['Order ID']||'').trim())}</small><div><strong>${esc(label(r['Product Name']))}</strong></div><small>${esc(r['Order Substatus']||r['Order Status']||'')} ${canceled(r)?'• cancelado':''}</small></div><div>${canceled(r)?'—':Math.max(0,qty(r)-number(data.done[idOf(r)]))+' / '+qty(r)}</div></div>`).join(''):'<p class="hint">Sem dados.</p>'}
+function renderStock(){
+ const {groups}=calc();const names=[...new Set([...rules.map(r=>r[0]),...Object.keys(groups),...Object.keys(data.stock)])].sort((a,b)=>a.localeCompare(b));
+ $('stocklist').innerHTML=names.map(n=>`<div class="stockrow"><div><strong>${esc(n)}</strong><small>${groups[n]?.unfulfilled||0} unidades pendentes no CSV</small></div><input type="number" inputmode="numeric" min="0" step="1" data-stock="${esc(n)}" value="${number(data.stock[n])}" aria-label="Estoque de ${esc(n)}"></div>`).join('');
+ const ledger=Object.entries(data.ledger).sort((a,b)=>String(b[1].at).localeCompare(String(a[1].at)));
+ $('history').innerHTML=ledger.length?ledger.map(([tracking,v])=>`<div class="historyrow"><strong>${esc(tracking)}</strong> · ${esc(v.at||'')}<br>${esc((v.items||[]).map(x=>x.name+' × '+x.qty).join(' · '))}${v.shortage?' <b>· Estoque insuficiente na baixa</b>':''}<br><button data-undo="${esc(tracking)}">Desfazer baixa</button></div>`).join(''):'<p class="hint">Nenhuma baixa registrada ainda.</p>';
+}
+$('stocklist').addEventListener('change',e=>{if(!e.target.matches('[data-stock]'))return;data.stock[e.target.dataset.stock]=number(e.target.value);save(K,data);draw()});
+$('addPack').onclick=()=>{const n=$('newPack').value.trim();if(!n)return; if(!(n in data.stock))data.stock[n]=0;save(K,data);$('newPack').value='';draw()};
+$('history').addEventListener('click',e=>{const b=e.target.closest('[data-undo]');if(!b)return;const tracking=b.dataset.undo,rec=data.ledger[tracking];if(!rec||!confirm('Desfazer a baixa deste rastreio? Use apenas para corrigir um lançamento errado.'))return;for(const it of rec.items){data.stock[it.name]=number(data.stock[it.name])+number(it.deducted);for(const k of it.keys||[])data.done[k.key]=Math.max(0,number(data.done[k.key])-number(k.qty))}delete data.ledger[tracking];save(K,data);draw()});
+$('backup').onclick=()=>{const blob=new Blob([JSON.stringify({version:2,data,rules},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='FunWave_backup_'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),30000)};
+$('restore').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const v=JSON.parse(await f.text());if(!v.data||!v.data.stock||!v.data.ledger)throw Error('Backup inválido');if(!confirm('Substituir estoque e histórico atuais pelos dados do backup?'))return;data=v.data;rules=v.rules||rules;save(K,data);save(R,rules);showRules();draw()}catch(err){alert(err.message)}e.target.value=''};
+// Retorna itens do CSV do mesmo rastreio; não baixa se o CSV não contiver o rastreio.
+function itemsForTracking(tr){const rs=rows.filter(r=>String(r['Tracking ID']||'').trim()===tr&&!canceled(r));if(!rs.length)return null;const grouped=new Map();for(const r of rs){const key=idOf(r),remaining=Math.max(0,qty(r)-number(data.done[key]));if(!remaining)continue;const n=label(r['Product Name']);if(!grouped.has(n))grouped.set(n,{name:n,qty:0,keys:[]});const item=grouped.get(n);item.qty+=remaining;item.keys.push({key,qty:remaining})}return [...grouped.values()]}
+function applyGeneratedTrackings(tracks){let fresh=0,repeated=0,unmatched=[],shortages=[];for(const tr of tracks){if(data.ledger[tr]){repeated++;continue}const items=itemsForTracking(tr);if(items===null){unmatched.push(tr);continue}let shortage=false;for(const it of items){const available=number(data.stock[it.name]),take=Math.min(available,it.qty);it.deducted=take;data.stock[it.name]=available-take;if(take<it.qty){shortage=true;shortages.push(it.name+' × '+(it.qty-take)+' ('+tr+')')}for(const k of it.keys)data.done[k.key]=number(data.done[k.key])+k.qty}data.ledger[tr]={at:new Date().toLocaleString('pt-BR'),items,shortage};fresh++}save(K,data);draw();return {fresh,repeated,unmatched,shortages}}
+function showRules(){$('rules').innerHTML=rules.map((r,i)=>`<div style="margin:12px 0"><strong>${esc(r[0])}</strong><input data-i="${i}" value="${esc(r[1])}" style="display:block;width:100%;padding:10px;border:1px solid #ddd;border-radius:8px;margin-top:5px"></div>`).join('')}
+$('file').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{const raw=csvParse(await f.text());if(raw.length<2)throw Error('O CSV não contém pedidos.');const cols=raw[0].map(x=>x.trim());for(const need of ['Order ID','Product Name','Quantity','Order Status'])if(!cols.includes(need))throw Error('Coluna ausente: '+need);const imported=raw.slice(1).map(a=>Object.fromEntries(cols.map((c,i)=>[c,(a[i]||'').trim()]))).filter(r=>r['Order ID']);if(!imported.length)throw Error('Nenhum pedido encontrado.');rows=imported;hasFile=true;$('message').textContent='✓ '+f.name+' carregado. Contagem atualizada.';$('message').className='hint success';$('last').textContent='Importado em '+new Date().toLocaleString('pt-BR');draw()}catch(err){$('message').textContent='Não consegui ler o arquivo: '+err.message;$('message').className='hint error'}e.target.value=''});
+$('saveRules').onclick=()=>{document.querySelectorAll('#rules input').forEach(el=>rules[Number(el.dataset.i)][1]=el.value);save(R,rules);draw();alert('Nomes salvos.')};
+$('reset').onclick=()=>{if(confirm('Apagar TODO o estoque e as marcações de impressão deste aparelho?')){data={stock:{},done:{},alloc:{},ledger:{}};save(K,data);draw()}};
+showRules();draw();document.querySelector('#tab-dashboard').append(...document.querySelector('#tab-extra').children);document.querySelector('#tab-extra').remove();document.querySelectorAll('[data-tab]').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===btn));document.querySelectorAll('.tabpanel').forEach(p=>p.hidden=p.id!=='tab-'+btn.dataset.tab)});window.FunWave={applyGeneratedTrackings};})();
+</script><script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
+const $=id=>document.getElementById(id), status=$('status'), go=$('go');
+const norm=s=>(s||'').replace(/\s+/g,' ').trim();
+const digits=s=>(s||'').replace(/\D/g,'');
+function shortProduct(t){
+  const x=(t||'').toLowerCase();
+  if(/dinoss|dino/.test(x)) return 'DINOS';
+  if(/encant|princes|fada|sereia/.test(x)) return 'ENCANTADAS';
+  if(/halloween|bruxa|fantasma|vampir|ab[oó]bora/.test(x)) return 'HALLOWEEN';
+  if(/farmando|aura|6.?7|six.?seven/.test(x)) return '6-7 / AURA';
+  if(/animais|fazenda|vaca|ovelha/.test(x)) return 'ANIMAIS';
+  if(/atividad/.test(x)) return 'ATIVIDADES';
+  return norm(t).replace(/\b(Presente|dia das crianças|criativo)\b/gi,'').slice(0,34).toUpperCase() || 'PRODUTO';
+}
+async function loadPdfJS(file){
+  const buf=await file.arrayBuffer();
+  return await pdfjsLib.getDocument({data:new Uint8Array(buf)}).promise;
+}
+async function pageText(pdf,n){
+  const p=await pdf.getPage(n); const c=await p.getTextContent();
+  return c.items.map(i=>i.str).join(' ');
+}
+function trackingFromText(t){
+  const m=norm(t).match(/(?:Tracking\s*(?:number)?|Pedido)\s*:?\s*(\d{12,18})/i);
+  if(m) return m[1];
+  const all=norm(t).match(/\b\d{15}\b/g);
+  return all?all[all.length-1]:null;
+}
+async function packingMap(file){
+  const pdf=await loadPdfJS(file), map=new Map();
+  for(let i=1;i<=pdf.numPages;i++){
+    const t=norm(await pageText(pdf,i));
+    const tr=(t.match(/Tracking\s*number\s*:?\s*(\d{12,18})/i)||[])[1];
+    if(!tr) continue;
+
+    let body=t;
+    const a=body.search(/Product\s*Name/i), b=body.search(/Qty\s*Total/i);
+    if(a>=0 && b>a) body=body.slice(a,b).replace(/Product\s*Name\s*SKU\s*Seller\s*SKU\s*Qty/i,'').trim();
+
+    // TikTok normalmente termina cada item com a variação (ex.: "Padrão") e a quantidade.
+    // Divide todos os itens quando essa estrutura estiver presente.
+    let items=[];
+    const re=/(.*?)(?:\s+Padr[aã]o|\s+Default|\s+SKU\s*)\s*(\d+)(?=\s|$)/gi;
+    let m;
+    while((m=re.exec(body))!==null){
+      let title=norm(m[1]);
+      // Remove possível sobra do item anterior.
+      title=title.replace(/^\d+\s+/,'').trim();
+      if(title) items.push({product:shortProduct(title),qty:parseInt(m[2])||1,raw:title});
+    }
+
+    // Fallback seguro para o formato atual da Packing List.
+    if(!items.length){
+      const total=parseInt((t.match(/Qty\s*Total\s*:?\s*(\d+)/i)||[])[1]||'1');
+      const title=body.replace(/\s+Padr[aã]o\s+\d+\s*$/i,'').trim();
+      items=[{product:shortProduct(title),qty:total,raw:title}];
+    }
+
+    // Junta o mesmo produto se aparecer mais de uma vez no mesmo pacote.
+    const grouped=new Map();
+    for(const it of items) grouped.set(it.product,(grouped.get(it.product)||0)+it.qty);
+    map.set(tr,{items:[...grouped].map(([product,qty])=>({product,qty}))});
+  }
+  return map;
+}
+async function pageIndexByTracking(file){
+  const pdf=await loadPdfJS(file), map=new Map();
+  for(let i=1;i<=pdf.numPages;i++){
+    const t=await pageText(pdf,i), tr=trackingFromText(t);
+    // No PDF combinado, ignora as páginas de Packing List.
+    if(tr && !/Packing\s*List|Qty\s*Total/i.test(t)) map.set(tr,i-1);
+  }
+  return map;
+}
+async function renderPageToPng(pdfFile,pageNo,scale=2,crop=null){
+  const pdf=await loadPdfJS(pdfFile), page=await pdf.getPage(pageNo+1);
+  const vp=page.getViewport({scale});
+  const full=document.createElement('canvas');
+  full.width=vp.width; full.height=vp.height;
+  await page.render({canvasContext:full.getContext('2d'),viewport:vp}).promise;
+
+  let canvas=full;
+  if(crop){
+    const x=Math.max(0,Math.round(full.width*crop.x));
+    const y=Math.max(0,Math.round(full.height*crop.y));
+    const w=Math.min(full.width-x,Math.round(full.width*crop.w));
+    const h=Math.min(full.height-y,Math.round(full.height*crop.h));
+    canvas=document.createElement('canvas');
+    canvas.width=w; canvas.height=h;
+    canvas.getContext('2d').drawImage(full,x,y,w,h,0,0,w,h);
+  }
+  return new Uint8Array(await (await fetch(canvas.toDataURL('image/png'))).arrayBuffer());
+}
+go.onclick=async()=>{
+ try{
+  const sf=$('shipping').files[0], df=$('danfe').files[0];
+  if(!sf||!df){status.innerHTML='<span class="warn">Selecione os dois PDFs primeiro.</span>';return}
+  const pf=sf;
+  go.disabled=true; status.textContent='Lendo os PDFs e cruzando os rastreios…';
+  const [pmap,smap,dmap]=await Promise.all([packingMap(pf),pageIndexByTracking(sf),pageIndexByTracking(df)]);
+  const tracks=[...smap.keys()];
+  const {PDFDocument,rgb,StandardFonts}=PDFLib;
+  const out=await PDFDocument.create(); const font=await out.embedFont(StandardFonts.HelveticaBold);
+  let made=0,missing=[],generatedTracks=[];
+  for(let k=0;k<tracks.length;k++){
+    const tr=tracks[k], si=smap.get(tr), di=dmap.get(tr), info=pmap.get(tr);
+    status.textContent=`Montando ${k+1} de ${tracks.length}…`;
+    if(di===undefined){missing.push(tr+' (sem DANFE)');continue}
+    // DANFE: usamos somente a área fiscal útil do topo.
+    // O "Tracking Number" original não entra na composição final.
+    const [spng,dpng]=await Promise.all([
+      renderPageToPng(sf,si,2.15),
+      renderPageToPng(df,di,2.6,{x:0.105,y:0.015,w:0.79,h:0.445})
+    ]);
+    const simg=await out.embedPng(spng), dimg=await out.embedPng(dpng);
+
+    // Etiqueta final 15 x 10 cm (paisagem).
+    const W=425.197, H=283.465, margin=2.5, gap=3;
+    const leftW=226, rightX=leftW+gap, rightW=W-rightX-margin;
+    const page=out.addPage([W,H]);
+
+    // TikTok: ocupa praticamente toda a altura disponível.
+    const sr=Math.min((leftW-margin)/simg.width,(H-2*margin)/simg.height);
+    const sw=simg.width*sr, sh=simg.height*sr;
+    page.drawImage(simg,{x:margin+(leftW-margin-sw)/2,y:(H-sh)/2,width:sw,height:sh});
+
+    // Área inferior de itens: reaproveita visualmente a faixa do antigo Tracking Number.
+    // Duas linhas permitem pedidos mistos sem sacrificar a legibilidade.
+    const band=32;
+    const danfeBottom=band+2, danfeTop=H-margin;
+    const availH=danfeTop-danfeBottom;
+
+    // Preenche a largura da coluna direita. O recorte já removeu o vazio da DANFE.
+    const dr=Math.min(rightW/dimg.width,availH/dimg.height);
+    const dw=dimg.width*dr, dh=dimg.height*dr;
+    page.drawImage(dimg,{
+      x:rightX+(rightW-dw)/2,
+      y:danfeBottom+(availH-dh)/2,
+      width:dw,height:dh
+    });
+
+    // Moldura de duas linhas, como a região original do Tracking Number.
+    page.drawLine({start:{x:rightX,y:band},end:{x:W-margin,y:band},thickness:0.8,color:rgb(0,0,0)});
+    page.drawLine({start:{x:rightX,y:2},end:{x:W-margin,y:2},thickness:0.8,color:rgb(0,0,0)});
+
+    const items=(info&&info.items&&info.items.length)?info.items:[{product:'PRODUTO NÃO LOCALIZADO',qty:''}];
+    const chunks=items.map(it=>`${it.product}${it.qty!==''?' × '+it.qty:''}`);
+
+    // Distribui em até duas linhas, priorizando fonte legível.
+    let lines=[''];
+    for(const chunk of chunks){
+      const candidate=lines[lines.length-1] ? lines[lines.length-1]+'  |  '+chunk : chunk;
+      if(font.widthOfTextAtSize(candidate,8.5)<=rightW-8 || lines.length===2){
+        lines[lines.length-1]=candidate;
+      }else{
+        lines.push(chunk);
+      }
+    }
+    if(lines.length>2){
+      lines=[lines[0],lines.slice(1).join(' | ')];
+    }
+    for(let li=0;li<lines.length;li++){
+      let txt=lines[li], size=8.5;
+      while(font.widthOfTextAtSize(txt,size)>rightW-8 && size>6) size-=0.25;
+      page.drawText(txt,{x:rightX+4,y:lines.length===1?11:(li===0?18:7),size,font,color:rgb(0,0,0)});
+    }
+    made++; generatedTracks.push(tr);
+  }
+  const bytes=await out.save(), blob=new Blob([bytes],{type:'application/pdf'}), url=URL.createObjectURL(blob);
+  const opened=window.open(url,'_blank'); if(!opened){const a=document.createElement('a');a.href=url;a.download='FunWave_Etiquetas.pdf';a.click();}
+  setTimeout(()=>URL.revokeObjectURL(url),30000);
+  const result=window.FunWave.applyGeneratedTrackings(generatedTracks);
+  status.textContent=`Pronto! ${made} etiquetas geradas.\n${result.fresh} rastreios novos contabilizados; ${result.repeated} reimpressões sem nova baixa.`+(result.unmatched.length?`\n⚠ ${result.unmatched.length} rastreios sem correspondência no CSV: nenhuma baixa para eles.`:'')+(result.shortages.length?`\n⚠ Estoque insuficiente: ${result.shortages.join('; ')}.`:'')+(missing.length?`\nSem DANFE: ${missing.join(', ')}`:'');
+ }catch(e){console.error(e);status.innerHTML='<span class="warn">Não consegui gerar. Detalhe: '+String(e.message||e)+'</span>'}
+ finally{go.disabled=false}
+};
+</script>
+<script>if("serviceWorker" in navigator && location.protocol.startsWith("http")){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(console.warn));}</script></body></html>
