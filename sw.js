@@ -1,4 +1,4 @@
-const CACHE='funwave-pwa-v7-20261009';
+const CACHE='funwave-pwa-v9-20261009';
 const CORE=['./','./index.html','./manifest.webmanifest','./icon-192.png','./icon-512.png'];
 self.addEventListener('install',e=>{e.waitUntil((async()=>{const c=await caches.open(CACHE);await c.addAll(CORE.map(p=>new Request(p,{cache:'reload'})));await self.skipWaiting()})())});
 self.addEventListener('activate',e=>{e.waitUntil((async()=>{await Promise.all((await caches.keys()).filter(k=>k.startsWith('funwave-pwa-')&&k!==CACHE).map(k=>caches.delete(k)));await self.clients.claim()})())});
